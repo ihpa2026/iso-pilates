@@ -1,0 +1,97 @@
+backend:
+  name: github
+  repo: OWNER/REPO          # ← 여기에 본인 GitHub 저장소 (예: hong/iso-pilates)
+  branch: main
+  base_url: https://AUTH.example.workers.dev   # ← Cloudflare 인증 도우미 주소로 교체
+
+media_folder: uploads
+public_folder: /uploads
+
+locale: ko
+
+collections:
+  - name: popup
+    label: 팝업창
+    files:
+      - name: popup
+        label: 메인 팝업
+        file: data/popup.json
+        fields:
+          - { label: "팝업 켜기(체크 시 표시)", name: enabled, widget: boolean, default: true }
+          - { label: 팝업 이미지, name: image, widget: image, required: false }
+          - { label: 제목, name: title, widget: string, required: false }
+          - { label: 내용, name: text, widget: text, required: false }
+          - { label: 링크 주소(선택), name: link, widget: string, required: false }
+          - { label: 링크 버튼 문구, name: linkText, widget: string, required: false, default: "자세히 보기" }
+  - name: site
+    label: 사이트 기본정보
+    files:
+      - name: general
+        label: 기본 정보
+        file: data/site.json
+        fields:
+          - { label: 대표 성함, name: repName, widget: string }
+          - { label: 대표 직함, name: repRole, widget: string }
+          - { label: 대표 사진, name: repPhoto, widget: image, required: false }
+          - { label: 주소, name: address, widget: string }
+          - { label: 이메일, name: email, widget: string }
+
+  - name: notices
+    label: 공지사항
+    files:
+      - name: notices
+        label: 공지 목록
+        file: data/notices.json
+        fields:
+          - label: 공지
+            name: items
+            widget: list
+            fields:
+              - { label: 제목, name: title, widget: string }
+              - { label: 날짜, name: date, widget: string }
+              - { label: 내용, name: body, widget: text, required: false }
+
+  - name: schedule
+    label: 교육·시험 일정
+    files:
+      - name: schedule
+        label: 일정 목록
+        file: data/schedule.json
+        fields:
+          - label: 일정
+            name: items
+            widget: list
+            fields:
+              - { label: 지부, name: branch, widget: string }
+              - { label: 과정, name: course, widget: string }
+              - { label: 교육일정, name: edu, widget: string }
+              - { label: 시험일, name: exam, widget: string }
+
+  - name: branches
+    label: 지부현황(국내)
+    files:
+      - name: branches
+        label: 지부 목록
+        file: data/branches.json
+        fields:
+          - { label: 한국총괄지부장 성함, name: head, widget: string }
+          - label: 지부
+            name: items
+            widget: list
+            fields:
+              - { label: 지역, name: region, widget: string }
+              - { label: 지부장 성함, name: name, widget: string }
+
+  - name: portfolio
+    label: 포트폴리오(사진)
+    files:
+      - name: portfolio
+        label: 사진 목록
+        file: data/portfolio.json
+        fields:
+          - label: 사진
+            name: items
+            widget: list
+            fields:
+              - { label: 이미지, name: image, widget: image }
+              - { label: 설명, name: caption, widget: string, required: false }
