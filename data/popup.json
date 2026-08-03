@@ -2,9 +2,9 @@
   "items": [
     {
       "enabled": true,
-      "image": "",
-      "title": "협회 공지",
-      "text": "ISO/IEC 17024 헬스케어지도사\n2026 상반기 교육 접수 중입니다.",
+      "image": "/uploads/2.png",
+      "title": "ISO/IEC 17024 필라테스지도사 1기 자격시험 모집",
+      "text": "ISO/IEC 17024 필라테스지도사\n8/30(일) 서울도봉/용인동백지부 자격시험 봅니다",
       "link": "",
       "linkText": "자세히 보기"
     }
