@@ -5,6 +5,7 @@ backend:
 
 media_folder: uploads
 public_folder: /uploads
+
 locale: ko
 
 collections:
@@ -21,7 +22,6 @@ collections:
           - { label: 내용, name: text, widget: text, required: false }
           - { label: 링크 주소(선택), name: link, widget: string, required: false }
           - { label: 링크 버튼 문구, name: linkText, widget: string, required: false, default: "자세히 보기" }
-
   - name: site
     label: 사이트 기본정보
     files:
@@ -73,13 +73,24 @@ collections:
         label: 지부 목록
         file: data/branches.json
         fields:
-          - { label: 한국총괄지부장 성함, name: head, widget: string }
-          - label: 지부
+          - label: 한국총괄지부장 (상단 고정, 크게)
+            name: head
+            widget: object
+            fields:
+              - { label: 지역명, name: region, widget: string, default: "한국 총괄지부" }
+              - { label: 직함, name: title, widget: string, default: "한국 총괄지부장" }
+              - { label: 성함, name: name, widget: string }
+              - { label: 사진, name: photo, widget: image, required: false }
+              - { label: 클릭 시 이동할 링크(블로그·SNS), name: link, widget: string, required: false }
+          - label: "지부 목록 (새 지부는 맨 위에 추가하세요)"
             name: items
             widget: list
             fields:
               - { label: 지역, name: region, widget: string }
+              - { label: 직함, name: title, widget: string, required: false, default: "지부장" }
               - { label: 지부장 성함, name: name, widget: string }
+              - { label: 사진, name: photo, widget: image, required: false }
+              - { label: 클릭 시 이동할 링크(블로그·SNS), name: link, widget: string, required: false }
 
   - name: portfolio
     label: 포트폴리오(사진)

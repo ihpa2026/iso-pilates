@@ -1,11 +1,17 @@
 {
-  "head": "성함 입력",
+  "head": {
+    "region": "한국 총괄지부",
+    "title": "한국 총괄지부장",
+    "name": "박혜원 원장",
+    "photo": "uploads/branch-4.jpg",
+    "link": "https://blog.naver.com/pilates_reum"
+  },
   "items": [
-    {"region": "평택", "name": "(성함)"},
-    {"region": "도봉", "name": "(성함)"},
-    {"region": "분당", "name": "(성함)"},
-    {"region": "동탄", "name": "(성함)"},
-    {"region": "경기 양주", "name": "(성함)"},
-    {"region": "서울 동대문", "name": "(성함)"}
+    { "region": "평택", "title": "평택 지부장", "name": "정미옥 원장", "photo": "uploads/branch-6.jpg", "link": "https://www.instagram.com/vanhada1977" },
+    { "region": "경기동탄", "title": "경기동탄 지부장", "name": "박정은 원장", "photo": "uploads/branch-2.jpg", "link": "https://blog.naver.com/reum_dongtan" },
+    { "region": "경기분당", "title": "경기분당 지부장", "name": "정혜욱 원장", "photo": "uploads/branch-1.jpg", "link": "https://blog.naver.com/woigi0714" },
+    { "region": "서울도봉", "title": "서울도봉 지부장", "name": "이세영 원장", "photo": "uploads/branch-7.jpg", "link": "https://www.instagram.com/saeneul.phila" },
+    { "region": "경기양주", "title": "경기양주 지부장", "name": "한지은 원장", "photo": "uploads/branch-3.jpg", "link": "https://www.instagram.com/soma_pilates_1" },
+    { "region": "서울동대문", "title": "서울동대문 지부장", "name": "김승연 원장", "photo": "uploads/branch-5.jpg", "link": "https://www.instagram.com/pilates_here" }
   ]
 }
