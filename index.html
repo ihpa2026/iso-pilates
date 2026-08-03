@@ -6,9 +6,7 @@
 <title>ISO필라테스 | ISO/IEC 17024 헬스케어지도사 국제자격</title>
 <meta name="description" content="ISO/IEC 17024 국제표준 헬스케어지도사 자격. 국제휴머니티총연맹(IHU) 주최, 국제휴먼뷰티필라테스협회(IHPA) 주관. 필라테스·PT·건강관리·체형관리·키즈·시니어 6개 분야 국제자격 교육.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>
 :root{
   --purple:#5A2D91; --purple2:#7B3FB3; --purple-d:#3B1E63;
   --gold:#C4A052; --gold2:#E3C878; --gold-d:#A5843C;
@@ -19,7 +17,7 @@ html{scroll-behavior:smooth;}
 body{font-family:'Pretendard',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;}
 a{color:inherit;text-decoration:none;} img{display:block;max-width:100%;}
 .wrap{max-width:1180px;margin:0 auto;padding:0 26px;}
-.pf{font-family:'Playfair Display',serif;}
+.pf{font-family:'Pretendard',sans-serif;}
 .purple{color:var(--purple);} .gold{color:var(--gold-d);}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-d);}
 .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1.5px;background:var(--gold);}
@@ -142,16 +140,16 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
 .iso-banners img{width:100%;border-radius:16px;box-shadow:0 12px 34px rgba(90,45,145,.16);border:1px solid var(--line);}
 @media(max-width:760px){.iso-banners{grid-template-columns:1fr;gap:14px;}}
 /* 총괄지부장 (크게, 상단 고정) */
-.head-branch{max-width:560px;margin:0 auto 30px;background:linear-gradient(135deg,var(--purple-d),var(--purple));color:#fff;border-radius:22px;padding:34px 30px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 46px rgba(90,45,145,.28);}
-.head-branch::after{content:"";position:absolute;width:200px;height:200px;border:2px solid rgba(255,255,255,.10);border-radius:50%;right:-70px;top:-70px;}
-.head-branch .k{font-size:12.5px;letter-spacing:2.5px;color:var(--gold2);font-weight:800;position:relative;z-index:1;}
-.head-branch .photo{width:250px;height:312px;margin:18px auto 0;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,.6);box-shadow:0 16px 38px rgba(0,0,0,.32);position:relative;z-index:1;display:block;transition:.25s;}
-.head-branch .photo:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.38);}
+.head-branch{max-width:560px;margin:0 auto 30px;background:#fff;color:#000;border:2px solid var(--gold);border-radius:22px;padding:34px 30px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 46px rgba(90,45,145,.16);}
+.head-branch::after{content:"";position:absolute;width:200px;height:200px;border:2px solid rgba(196,160,82,.14);border-radius:50%;right:-70px;top:-70px;}
+.head-branch .k{font-size:12.5px;letter-spacing:2.5px;color:var(--gold-d);font-weight:800;position:relative;z-index:1;}
+.head-branch .photo{width:250px;height:312px;margin:18px auto 0;border-radius:18px;overflow:hidden;border:3px solid var(--line);box-shadow:0 16px 38px rgba(0,0,0,.18);position:relative;z-index:1;display:block;transition:.25s;}
+.head-branch .photo:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.24);}
 .head-branch .photo img{width:100%;height:100%;object-fit:cover;}
-.head-branch .title{font-size:15px;font-weight:700;color:var(--gold2);margin-top:18px;position:relative;z-index:1;}
-.head-branch .nm{font-size:29px;font-weight:800;margin-top:5px;position:relative;z-index:1;letter-spacing:-.5px;}
-.head-branch .go{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:700;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);padding:8px 18px;border-radius:30px;position:relative;z-index:1;transition:.2s;}
-.head-branch .go:hover{background:rgba(255,255,255,.28);}
+.head-branch .title{font-size:15px;font-weight:700;color:#000;margin-top:18px;position:relative;z-index:1;}
+.head-branch .nm{font-size:29px;font-weight:800;margin-top:5px;position:relative;z-index:1;letter-spacing:-.5px;color:#000;}
+.head-branch .go{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:700;color:var(--purple);background:var(--soft);border:1px solid var(--line);padding:8px 18px;border-radius:30px;position:relative;z-index:1;transition:.2s;}
+.head-branch .go:hover{background:#EFE8F7;border-color:var(--purple);}
 .branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:880px;margin:0 auto;}
 .bcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 20px;text-align:center;transition:.22s;display:block;}
 .bcard:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 14px 30px rgba(90,45,145,.12);}
