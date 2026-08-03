@@ -118,10 +118,12 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
 .sec-photo{max-width:900px;margin:0 auto 22px;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(90,45,145,.14);border:1px solid var(--line);}
 .sec-photo img{width:100%;height:auto;max-height:440px;object-fit:cover;display:block;}
 .inline-iso{height:62px;width:auto;float:left;margin:2px 18px 8px 0;}
-.iso-certs{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;max-width:960px;margin:0 auto;align-items:center;}
-.iso-certs img{width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(90,45,145,.14);border:1px solid var(--line);}
-.cert-cards{display:flex;flex-direction:column;gap:18px;}
-@media(max-width:760px){.iso-certs{grid-template-columns:1fr;}}
+.iso-certs{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;max-width:960px;margin:0 auto;align-items:stretch;}
+.iso-certs img{border-radius:14px;box-shadow:0 12px 30px rgba(90,45,145,.14);border:1px solid var(--line);}
+.iso-certs .cert-big{width:100%;height:auto;align-self:start;}
+.cert-cards{display:flex;flex-direction:column;gap:20px;}
+.cert-cards img{width:100%;flex:1 1 0;min-height:0;object-fit:cover;}
+@media(max-width:760px){.iso-certs{grid-template-columns:1fr;}.cert-cards img{flex:none;height:auto;}}
 /* 시험 프로세스 */
 .proc{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
 .proc-step{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 28px;transition:.2s;}
