@@ -1,9 +1,24 @@
 {
   "items": [
-    {"image": "", "caption": "자격 시험 현장"},
-    {"image": "", "caption": "세미나 2026"},
-    {"image": "", "caption": "지도사 교육"},
-    {"image": "", "caption": "수료식"},
-    {"image": "", "caption": "워크숍"}
+    {
+      "image": "/uploads/KakaoTalk_20240819_100340017_13.jpg",
+      "caption": "세미나 2026"
+    },
+    {
+      "image": "/uploads/KakaoTalk_20240819_100340017_11.jpg",
+      "caption": "자격 시험 현장"
+    },
+    {
+      "image": "/uploads/iso-gray.png",
+      "caption": "지도사 교육"
+    },
+    {
+      "image": "/uploads/iso-red.png",
+      "caption": "수료식"
+    },
+    {
+      "image": "/uploads/logo-ihpa.png",
+      "caption": "워크숍"
+    }
   ]
 }
