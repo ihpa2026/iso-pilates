@@ -118,8 +118,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
 .sec-photo{max-width:900px;margin:0 auto 22px;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(90,45,145,.14);border:1px solid var(--line);}
 .sec-photo img{width:100%;height:auto;max-height:440px;object-fit:cover;display:block;}
 .inline-iso{height:62px;width:auto;float:left;margin:2px 18px 8px 0;}
-.iso-certs{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;max-width:940px;margin:0 auto;align-items:center;}
+.iso-certs{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;max-width:960px;margin:0 auto;align-items:center;}
 .iso-certs img{width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(90,45,145,.14);border:1px solid var(--line);}
+.cert-cards{display:flex;flex-direction:column;gap:18px;}
 @media(max-width:760px){.iso-certs{grid-template-columns:1fr;}}
 /* 시험 프로세스 */
 .proc{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
@@ -376,8 +377,11 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 
     <div class="sec-head reveal" style="margin:64px auto 0;"><span class="eyebrow">Certificate & ID Card</span><h2>ISO/IEC 17024 자격증 · 인증카드</h2><p>IQCS(한국인증원) 발급 · ISO/IEC 17024 국제표준 기반 국제 자격증 및 국제 인증카드가 발급됩니다.</p></div>
     <div class="iso-certs reveal">
-      <img src="uploads/cert-jaehoon.jpg" alt="ISO/IEC 17024 IQCS 국제 자격증">
-      <img src="uploads/idcard-jaehoon.jpg" alt="ISO/IEC 17024 IHU KOREA 국제 인증카드">
+      <img class="cert-big" src="uploads/cert-jaehoon.jpg" alt="ISO/IEC 17024 IQCS 국제 자격증">
+      <div class="cert-cards">
+        <img src="uploads/idcard-jaehoon.jpg" alt="ISO/IEC 17024 IHU KOREA 국제 인증카드">
+        <img src="uploads/idcard-kr.jpg" alt="ISO/IEC 17024 IQCS 국제 인증카드">
+      </div>
     </div>
 
     <div class="sec-head reveal" style="margin:64px auto 0;"><span class="eyebrow">Certification System</span><h2>ISO/IEC 17024 국제자격인증제도</h2></div>
@@ -405,8 +409,8 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Organizer</span><h2>주최 · 주관</h2><p>국제휴머니티총연맹(IHU)의 산하단체로 국제휴먼뷰티필라테스협회(IHPA)가 있으며, IHPA가 ISO/IEC 17024 헬스케어지도사 자격을 주관 운영합니다.</p></div>
     <div class="host-grid">
-      <div class="host reveal"><div class="host-logo"><img src="uploads/logo-ihu.png" alt="IHU 국제휴머니티총연맹 로고"></div><div class="role">주최 · HOST</div><h3>국제휴머니티총연맹</h3><div class="en">International Humanity Union (IHU)</div><p>국제 휴머니티 가치를 기반으로 국제표준 자격인증 사업을 총괄 주최하는 국제기구입니다.</p></div>
-      <div class="host reveal"><div class="host-logo"><img src="uploads/logo-ihpa.png" alt="IHPA 국제휴먼뷰티필라테스협회 로고"></div><div class="role">주관 · ORGANIZER</div><h3>국제휴먼뷰티필라테스협회</h3><div class="en">Int'l Human Beauty Pilates Association (IHPA)</div><p>국제휴머니티총연맹(IHU)의 <b class="purple">산하단체</b>로서, ISO/IEC 17024 헬스케어지도사 자격의 교육·시험·인증을 주관 운영합니다.</p></div>
+      <div class="host reveal"><div class="host-logo"><img src="uploads/logo-ihu.png" alt="IHU 국제휴머니티총연맹 로고"></div><div class="role">주최 · HOST</div><h3>국제휴머니티총연맹</h3><div class="en">International Humanity Union (IHU)</div><p>아시아 12개국 미용&건강 단체가 모인 총연맹기구입니다.</p></div>
+      <div class="host reveal"><div class="host-logo"><img src="uploads/logo-ihpa.png" alt="IHPA 국제휴먼뷰티필라테스협회 로고"></div><div class="role">주관 · ORGANIZER</div><h3>국제휴먼뷰티필라테스협회</h3><div class="en">International Human Beauty Pilates Association (IHPA)</div><p>국제휴머니티총연맹(IHU)의 <b class="purple">산하단체</b>로서, ISO/IEC 17024 헬스케어지도사 자격의 교육·시험·인증을 주관 운영합니다.</p></div>
     </div>
     <div class="rep reveal">
       <div class="photo" id="repPhoto">대표 사진<br>(추가 예정)</div>
@@ -620,7 +624,7 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
       <div class="foot-cols">
         <div><h5>자격</h5><a href="#iso">ISO17024</a><a href="#host">주최/주관(협회)</a><a href="#schedule">각 지부 시험&교육일정</a><a href="#online">온라인시험</a></div>
         <div><h5>협회</h5><a href="#branch">지부현황</a><a href="#recruit">지부모집</a><a href="#portfolio">포트폴리오</a><a href="#community">커뮤니티</a></div>
-        <div><h5>연결</h5><a href="https://www.iqcsplus.co.kr/site/korean/php/inquiry/inter.php" target="_blank" rel="noopener">국제인증강사조회</a><a href="https://instagram.com/ihpa2026" target="_blank" rel="noopener">인스타그램</a><a href="mailto:ihbpilates@naver.com">이메일 문의</a></div>
+        <div><h5>연결</h5><a href="https://www.iqcsplus.co.kr/site/korean/php/inquiry/inter.php" target="_blank" rel="noopener">국제인증강사조회</a><a href="https://instagram.com/ihpa2026" target="_blank" rel="noopener">인스타그램</a><a href="#community">1:1 문의</a></div>
       </div>
     </div>
     <div class="foot-bottom">
@@ -679,8 +683,8 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 // ===== CMS 데이터 렌더링 =====
 /* ===== 기본 내장 데이터 (파일을 직접 열거나 fetch 실패 시에도 항상 표시) ===== */
 var FALLBACK={
-  site:{"repName":"정재훈","repRole":"국제휴먼뷰티필라테스협회(IHPA) 회장","repPhoto":"uploads/rep.jpg","address":"서울특별시 동대문구 왕산로 9길 25, 2층","email":"ihbpilates@naver.com"},
-  branches:{"head":{"region":"한국 총괄지부","title":"한국 총괄지부장","name":"박혜원 원장","photo":"uploads/branch-4.jpg","link":"https://blog.naver.com/pilates_reum"},"items":[{"region":"평택","title":"평택 지부장","name":"정미옥 원장","photo":"uploads/branch-6.jpg","link":"https://www.instagram.com/vanhada1977"},{"region":"경기동탄","title":"경기동탄 지부장","name":"박정은 원장","photo":"uploads/branch-2.jpg","link":"https://blog.naver.com/reum_dongtan"},{"region":"경기분당","title":"경기분당 지부장","name":"정혜욱 원장","photo":"uploads/branch-1.jpg","link":"https://blog.naver.com/woigi0714"},{"region":"서울도봉","title":"서울도봉 지부장","name":"이세영 원장","photo":"uploads/branch-7.jpg","link":"https://www.instagram.com/saeneul.phila"},{"region":"경기양주","title":"경기양주 지부장","name":"한지은 원장","photo":"uploads/branch-3.jpg","link":"https://www.instagram.com/soma_pilates_1"},{"region":"서울동대문","title":"서울동대문 지부장","name":"김승연 원장","photo":"uploads/branch-5.jpg","link":"https://www.instagram.com/pilates_here"}]},
+  site:{"repName":"정재훈","repRole":"ISO/IEC 17024 헬스케어지도사 아시아총괄지부회장","repPhoto":"uploads/rep.jpg","address":"서울특별시 동대문구 왕산로 9길 25, 2층","email":"ihbpilates@naver.com"},
+  branches:{"head":{"region":"한국 총괄지부","title":"한국 총괄지부장","name":"박혜원 원장","photo":"uploads/branch-4.jpg","link":"https://blog.naver.com/pilates_reum"},"items":[{"region":"경기평택","title":"경기평택 지부장","name":"정미옥 원장","photo":"uploads/branch-6.jpg","link":"https://www.instagram.com/vanhada1977"},{"region":"경기동탄","title":"경기동탄 지부장","name":"박정은 원장","photo":"uploads/branch-2.jpg","link":"https://blog.naver.com/reum_dongtan"},{"region":"경기분당","title":"경기분당 지부장","name":"정혜욱 원장","photo":"uploads/branch-1.jpg","link":"https://blog.naver.com/woigi0714"},{"region":"서울도봉","title":"서울도봉 지부장","name":"이세영 원장","photo":"uploads/branch-7.jpg","link":"https://www.instagram.com/saeneul.phila"},{"region":"경기양주","title":"경기양주 지부장","name":"한지은 원장","photo":"uploads/branch-3.jpg","link":"https://www.instagram.com/soma_pilates_1"},{"region":"서울동대문","title":"서울동대문 지부장","name":"김승연 원장","photo":"uploads/branch-5.jpg","link":"https://www.instagram.com/pilates_here"}]},
   schedule:{"items":[{"branch":"서울 동대문","course":"필라테스 지도사","edu":"2026.03 ~ 04","exam":"2026.04.20"},{"branch":"분당","course":"건강관리 지도사","edu":"2026.03 ~ 05","exam":"2026.05.11"},{"branch":"평택","course":"시니어 헬스케어","edu":"2026.04 ~ 05","exam":"2026.05.25"},{"branch":"동탄","course":"키즈 헬스케어","edu":"2026.04 ~ 06","exam":"2026.06.15"}]},
   portfolio:{"items":[{"image":"","caption":"자격 시험 현장"},{"image":"","caption":"세미나 2026"},{"image":"","caption":"지도사 교육"},{"image":"","caption":"수료식"},{"image":"","caption":"워크숍"}]},
   notices:{"items":[{"title":"ISO/IEC 17024 헬스케어지도사 2026 상반기 교육 안내","date":"2026.02.10","body":""},{"title":"국제인증강사 자격 갱신 안내","date":"2026.01.28","body":""},{"title":"신규 지부 모집 공고 (평택·동탄)","date":"2026.01.15","body":""},{"title":"협회 창립 및 국제 인증 취득 안내","date":"2026.01.02","body":""}]},
@@ -712,7 +716,7 @@ Promise.all([j('data/site.json',FALLBACK.site),j('data/branches.json',FALLBACK.b
     if(bg&&br.items)bg.innerHTML=br.items.map(function(b){
       var photo=b.photo?'<div class="photo"><img src="'+b.photo+'" alt="'+(b.name||'')+'"></div>':'<div class="photo"></div>';
       var go=b.link?'<span class="go">바로가기 →</span>':'';
-      var inner=photo+'<div class="loc">'+b.region+'</div><div class="t">'+(b.title||'지부장')+'</div><div class="nm">'+(b.name||'')+'</div>'+go;
+      var inner=photo+'<div class="loc">'+(b.title||(b.region+' 지부장'))+'</div><div class="nm">'+(b.name||'')+'</div>'+go;
       return b.link
         ? '<a class="bcard" href="'+b.link+'" target="_blank" rel="noopener">'+inner+'</a>'
         : '<div class="bcard">'+inner+'</div>';
