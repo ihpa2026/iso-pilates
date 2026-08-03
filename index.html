@@ -264,6 +264,14 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 .popup .pfoot button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;font-family:inherit;}
 .popup .pfoot .close{font-weight:700;color:var(--purple-d);}
 .reveal{opacity:0;transform:translateY(22px);transition:.6s;} .reveal.in{opacity:1;transform:none;}
+/* 순차 등장 애니메이션 (취득 장점 · 시험 프로세스 · 진출분야 · BENEFIT) */
+.bene-grid .reveal,.career-grid .reveal,.proc .reveal{transform:translateY(34px) scale(.96);transition:.65s cubic-bezier(.2,.75,.3,1);}
+.bene-grid .reveal.in,.career-grid .reveal.in,.proc .reveal.in{transform:none;}
+.bene-grid .reveal:nth-child(2),.career-grid .reveal:nth-child(2),.proc .reveal:nth-child(2){transition-delay:.10s;}
+.bene-grid .reveal:nth-child(3),.career-grid .reveal:nth-child(3),.proc .reveal:nth-child(3){transition-delay:.20s;}
+.bene-grid .reveal:nth-child(4),.career-grid .reveal:nth-child(4),.proc .reveal:nth-child(4){transition-delay:.30s;}
+.bene-grid .reveal:nth-child(5),.proc .reveal:nth-child(5){transition-delay:.40s;}
+.bene-grid .reveal:nth-child(6){transition-delay:.50s;}
 @media(max-width:1024px){ .menu{display:none;} .burger{display:flex;}
   .menu.open{display:flex;position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:center;padding:20px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.08);}
 }
@@ -519,14 +527,13 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 <!-- 교육일정 -->
 <section class="sec soft" id="schedule">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Schedule</span><h2>지부별 시험 · 교육일정</h2><p>지부별 교육 및 자격시험 일정입니다. (예시 · 기존 홈페이지 내용으로 반영 예정)</p></div>
+    <div class="sec-head reveal"><span class="eyebrow">Schedule</span><h2>지부별 시험 · 교육일정</h2></div>
     <div class="sched reveal">
       <table>
         <thead><tr><th>지부</th><th>과정</th><th>교육일정</th><th>시험일</th></tr></thead>
         <tbody id="schedBody"></tbody>
       </table>
     </div>
-    <p class="note-line">※ 상기 일정은 예시이며, 실제 일정으로 교체·업데이트됩니다. (구글 시트 연동 시 자동 반영 가능)</p>
   </div>
 </section>
 
@@ -545,7 +552,6 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
   </div>
   <div class="marquee reveal"><div class="marquee-track" id="galGrid"></div></div>
   <div class="wrap">
-    <p class="gal-note">※ 실제 사진으로 교체 예정입니다. (사진 위에 마우스를 올리면 멈춥니다)</p>
   </div>
 </section>
 
