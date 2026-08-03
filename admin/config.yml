@@ -16,12 +16,16 @@ collections:
         label: 메인 팝업
         file: data/popup.json
         fields:
-          - { label: "팝업 켜기(체크 시 표시)", name: enabled, widget: boolean, default: true }
-          - { label: 팝업 이미지, name: image, widget: image, required: false }
-          - { label: 제목, name: title, widget: string, required: false }
-          - { label: 내용, name: text, widget: text, required: false }
-          - { label: 링크 주소(선택), name: link, widget: string, required: false }
-          - { label: 링크 버튼 문구, name: linkText, widget: string, required: false, default: "자세히 보기" }
+          - label: "팝업 목록 (여러 개 추가 시 한 화면에 나란히 표시 · 2~3개 권장)"
+            name: items
+            widget: list
+            fields:
+              - { label: "이 팝업 켜기(체크 시 표시)", name: enabled, widget: boolean, default: true }
+              - { label: 팝업 이미지, name: image, widget: image, required: false }
+              - { label: 제목, name: title, widget: string, required: false }
+              - { label: 내용, name: text, widget: text, required: false }
+              - { label: 링크 주소(선택), name: link, widget: string, required: false }
+              - { label: 링크 버튼 문구, name: linkText, widget: string, required: false, default: "자세히 보기" }
   - name: site
     label: 사이트 기본정보
     files:

@@ -273,7 +273,8 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 .foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;color:#9A88BC;font-size:12.5px;line-height:1.9;}
 .popup-ov{position:fixed;inset:0;background:rgba(20,10,40,.62);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
 .popup-ov.show{display:flex;}
-.popup{background:#fff;border-radius:16px;max-width:400px;width:100%;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.32);animation:pop .3s ease;}
+.popup-row{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:flex-start;max-width:96vw;max-height:92vh;overflow-y:auto;}
+.popup{background:#fff;border-radius:16px;width:330px;max-width:88vw;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.32);animation:pop .3s ease;flex:none;}
 @keyframes pop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
 .popup>img{width:100%;display:block;}
 .popup .pbody{padding:26px 26px 6px;text-align:center;}
@@ -648,20 +649,9 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
   </div>
 </footer>
 
-<!-- POPUP -->
-<div class="popup-ov" id="popupOv" onclick="if(event.target===this)closePopup()">
-  <div class="popup">
-    <img id="popupImg" src="" alt="공지" style="display:none;">
-    <div class="pbody">
-      <h4 id="popupTitle"></h4>
-      <p id="popupText"></p>
-      <a id="popupBtn" href="#" target="_blank" rel="noopener" class="pbtn" style="display:none;"></a>
-    </div>
-    <div class="pfoot">
-      <button id="popupToday">오늘 하루 보지 않기</button>
-      <button class="close" onclick="closePopup()">닫기 ✕</button>
-    </div>
-  </div>
+<!-- POPUP (여러 개 동시 표시) -->
+<div class="popup-ov" id="popupOv" onclick="if(event.target===this)closeAllPopups()">
+  <div class="popup-row" id="popupRow"></div>
 </div>
 
 <!-- 상세보기 모달 (일정·공지) -->
@@ -715,10 +705,12 @@ var FALLBACK={
   schedule:{"items":[{"branch":"서울 동대문","course":"필라테스 지도사","edu":"2026.03 ~ 04","exam":"2026.04.20","status":"모집중","body":"필라테스 지도사 자격 과정 안내입니다. 자세한 커리큘럼과 준비물은 상담을 통해 안내해 드립니다.","image":""},{"branch":"분당","course":"건강관리 지도사","edu":"2026.03 ~ 05","exam":"2026.05.11","status":"모집중","body":"건강관리 지도사 과정입니다. 신청 및 문의는 하단 1:1 문의 또는 상담 채널을 이용해 주세요.","image":""},{"branch":"평택","course":"시니어 헬스케어","edu":"2026.04 ~ 05","exam":"2026.05.25","status":"모집중","body":"시니어 헬스케어 지도사 과정입니다.","image":""},{"branch":"동탄","course":"키즈 헬스케어","edu":"2026.04 ~ 06","exam":"2026.06.15","status":"모집중","body":"키즈(아동) 헬스케어 지도사 과정입니다.","image":""}]},
   portfolio:{"items":[{"image":"","caption":"자격 시험 현장"},{"image":"","caption":"세미나 2026"},{"image":"","caption":"지도사 교육"},{"image":"","caption":"수료식"},{"image":"","caption":"워크숍"}]},
   notices:{"items":[{"title":"ISO/IEC 17024 헬스케어지도사 2026 상반기 교육 안내","date":"2026.02.10","body":"2026 상반기 헬스케어지도사 교육 일정을 안내드립니다. 자세한 내용은 각 지부 시험·교육일정을 확인해 주세요.","image":""},{"title":"국제인증강사 자격 갱신 안내","date":"2026.01.28","body":"자격 유효기간은 2년이며, 2년마다 갱신이 필요합니다.","image":""},{"title":"신규 지부 모집 공고 (평택·동탄)","date":"2026.01.15","body":"신규 교육 지부를 모집합니다. 지부모집 안내를 확인해 주세요.","image":""},{"title":"협회 창립 및 국제 인증 취득 안내","date":"2026.01.02","body":"국제휴먼뷰티필라테스협회(IHPA) 창립 및 ISO/IEC 17024 국제 인증 취득을 안내드립니다.","image":""}]},
-  popup:{"enabled":true,"image":"","title":"협회 공지","text":"ISO/IEC 17024 헬스케어지도사\n2026 상반기 교육 접수 중입니다.","link":"","linkText":"자세히 보기"}
+  popup:{"items":[{"enabled":true,"image":"","title":"협회 공지","text":"ISO/IEC 17024 헬스케어지도사\n2026 상반기 교육 접수 중입니다.","link":"","linkText":"자세히 보기"}]}
 };
 function j(u,fb){return fetch(u).then(function(r){return r.json();}).catch(function(){return fb;}).then(function(v){return v||fb;});}
 function closePopup(){document.getElementById('popupOv').classList.remove('show');}
+function closeAllPopups(){document.getElementById('popupOv').classList.remove('show');}
+function closeOnePopup(btn){var c=btn.closest('.popup');if(c)c.remove();var row=document.getElementById('popupRow');if(row&&row.children.length===0)closeAllPopups();}
 function openDetail(type,i){
   var d = type==='sched' ? (window.SCHED_ITEMS||[])[i] : (window.NOTICE_ITEMS||[])[i];
   if(!d)return;
@@ -732,7 +724,7 @@ function openDetail(type,i){
   document.getElementById('detailOv').classList.add('show');
 }
 function closeDetail(){document.getElementById('detailOv').classList.remove('show');}
-function skipPopupToday(){try{localStorage.setItem('iso_popup_skip',new Date().toDateString());}catch(e){}closePopup();}
+function skipPopupToday(idx,btn){try{localStorage.setItem('iso_popup_skip_'+idx,new Date().toDateString());}catch(e){}if(typeof btn==='object'&&btn){closeOnePopup(btn);}else{closeAllPopups();}}
 Promise.all([j('data/site.json',FALLBACK.site),j('data/branches.json',FALLBACK.branches),j('data/schedule.json',FALLBACK.schedule),j('data/portfolio.json',FALLBACK.portfolio),j('data/notices.json',FALLBACK.notices),j('data/popup.json',FALLBACK.popup)]).then(function(d){
   var site=d[0],br=d[1],sc=d[2],pf=d[3],no=d[4],pop=d[5];
   if(site){
@@ -777,16 +769,25 @@ Promise.all([j('data/site.json',FALLBACK.site),j('data/branches.json',FALLBACK.b
   if(no&&no.items){window.NOTICE_ITEMS=no.items;var nl=document.getElementById('noticeList');
     if(nl)nl.innerHTML=no.items.map(function(n,i){return '<a href="javascript:void(0)" onclick="openDetail(\'notice\','+i+')"><span class="nt">'+n.title+'</span><span class="dt">'+n.date+'</span></a>';}).join('');
   }
-  if(pop&&pop.enabled){
-    var skip=false; try{skip=localStorage.getItem('iso_popup_skip')===new Date().toDateString();}catch(e){}
-    if(!skip){
-      if(pop.image){var pi=document.getElementById('popupImg');pi.src=pop.image;pi.style.display='block';}
-      if(pop.title){document.getElementById('popupTitle').textContent=pop.title;} else {document.getElementById('popupTitle').style.display='none';}
-      if(pop.text){document.getElementById('popupText').textContent=pop.text;} else {document.getElementById('popupText').style.display='none';}
-      if(pop.link){var pb=document.getElementById('popupBtn');pb.href=pop.link;pb.textContent=pop.linkText||'자세히 보기';pb.style.display='inline-block';}
-      document.getElementById('popupToday').onclick=skipPopupToday;
-      document.getElementById('popupOv').classList.add('show');
-    }
+  if(pop){
+    // 하위호환: 예전 단일 팝업(pop.enabled) 또는 새 목록(pop.items) 모두 지원
+    var list = pop.items ? pop.items : (pop.enabled!==false ? [pop] : []);
+    var row=document.getElementById('popupRow'); var shown=0;
+    list.forEach(function(it,idx){
+      if(!it || it.enabled===false) return;
+      if(!(it.image||it.title||it.text)) return;
+      var skip=false; try{skip=localStorage.getItem('iso_popup_skip_'+idx)===new Date().toDateString();}catch(e){}
+      if(skip) return;
+      var card=document.createElement('div'); card.className='popup';
+      var img=it.image?'<img src="'+it.image+'" alt="공지" style="width:100%;display:block;">':'';
+      var h=it.title?'<h4></h4>':''; var pt=it.text?'<p></p>':'';
+      var btn=it.link?'<a href="'+it.link+'" target="_blank" rel="noopener" class="pbtn">'+(it.linkText||'자세히 보기')+'</a>':'';
+      card.innerHTML=img+'<div class="pbody">'+h+pt+btn+'</div><div class="pfoot"><button onclick="skipPopupToday('+idx+',this)">오늘 하루 보지 않기</button><button class="close" onclick="closeOnePopup(this)">닫기 ✕</button></div>';
+      if(it.title) card.querySelector('h4').textContent=it.title;
+      if(it.text) card.querySelector('p').textContent=it.text;
+      row.appendChild(card); shown++;
+    });
+    if(shown>0) document.getElementById('popupOv').classList.add('show');
   }
 });
 </script>
