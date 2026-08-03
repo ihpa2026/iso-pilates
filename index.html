@@ -48,7 +48,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
   radial-gradient(60% 60% at 50% 0%,rgba(90,45,145,.08),transparent 70%),var(--bg);overflow:hidden;}
 .hero::before{content:"";position:absolute;inset:0;z-index:0;
   background:url('uploads/iso-logo.png') center 46% / min(560px,80%) no-repeat;
-  opacity:.10;filter:blur(3px);}
+  opacity:.24;filter:blur(1px);}
 .hero .wrap{position:relative;z-index:1;}
 .hero .hero-title{font-size:clamp(38px,6.5vw,78px);font-weight:900;letter-spacing:-2.5px;line-height:1.1;margin:0;color:var(--ink);}
 .hero .hero-title .g{display:inline-block;margin-top:6px;background:linear-gradient(100deg,var(--purple),var(--gold-d));-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -95,13 +95,16 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
 .host h3{font-size:22px;font-weight:800;color:var(--purple-d);margin:8px 0 4px;}
 .host .en{font-size:13px;color:var(--muted);font-weight:600;}
 .host p{font-size:15px;color:#4A4458;margin-top:14px;}
-.rep{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:linear-gradient(135deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:22px;}
-.rep .photo{width:150px;height:180px;border-radius:14px;background:linear-gradient(160deg,#E9E1F5,#D8C7EC);display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:13px;font-weight:700;text-align:center;border:1px solid var(--line);}
-.rep .r-role{font-size:12.5px;font-weight:800;letter-spacing:1px;color:var(--gold-d);}
-.rep h3{font-size:24px;font-weight:800;color:var(--purple-d);margin:6px 0;}
-.rep ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px;}
-.rep li{font-size:14.5px;color:#4A4458;padding-left:18px;position:relative;}
+.rep{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;background:linear-gradient(135deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;padding:34px;margin-top:22px;}
+.rep .photo{width:190px;height:238px;border-radius:14px;background:linear-gradient(160deg,#E9E1F5,#D8C7EC);display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:13px;font-weight:700;text-align:center;border:1px solid var(--line);position:sticky;top:90px;}
+.rep .r-role{font-size:13px;font-weight:800;letter-spacing:.5px;color:var(--gold-d);}
+.rep h3{font-size:25px;font-weight:800;color:var(--purple-d);margin:6px 0 4px;}
+.rep-spec{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;margin-top:18px;}
+.rep-h{font-size:14px;font-weight:800;color:var(--purple);letter-spacing:1px;padding-bottom:8px;margin-bottom:10px;border-bottom:2px solid var(--line);}
+.rep ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.rep li{font-size:14px;color:#4A4458;padding-left:16px;position:relative;line-height:1.5;}
 .rep li::before{content:"—";position:absolute;left:0;color:var(--gold);}
+@media(max-width:760px){.rep-spec{grid-template-columns:1fr;} .rep .photo{position:static;}}
 .ph-note{font-size:12px;color:var(--muted);}
 /* TABS (지부) */
 .tabs{display:flex;gap:8px;justify-content:center;margin-bottom:34px;}
@@ -121,7 +124,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdr
 .head-branch{max-width:560px;margin:0 auto 30px;background:linear-gradient(135deg,var(--purple-d),var(--purple));color:#fff;border-radius:22px;padding:34px 30px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 46px rgba(90,45,145,.28);}
 .head-branch::after{content:"";position:absolute;width:200px;height:200px;border:2px solid rgba(255,255,255,.10);border-radius:50%;right:-70px;top:-70px;}
 .head-branch .k{font-size:12.5px;letter-spacing:2.5px;color:var(--gold2);font-weight:800;position:relative;z-index:1;}
-.head-branch .photo{width:172px;height:214px;margin:16px auto 0;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,.55);box-shadow:0 12px 30px rgba(0,0,0,.28);position:relative;z-index:1;display:block;transition:.25s;}
+.head-branch .photo{width:250px;height:312px;margin:18px auto 0;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,.6);box-shadow:0 16px 38px rgba(0,0,0,.32);position:relative;z-index:1;display:block;transition:.25s;}
 .head-branch .photo:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.38);}
 .head-branch .photo img{width:100%;height:100%;object-fit:cover;}
 .head-branch .title{font-size:15px;font-weight:700;color:var(--gold2);margin-top:18px;position:relative;z-index:1;}
@@ -333,22 +336,56 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 <!-- 주최/주관 -->
 <section class="sec" id="host">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Organizer</span><h2>주최 · 주관</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Organizer</span><h2>주최 · 주관</h2><p>국제휴머니티총연맹(IHU)의 산하단체로 국제휴먼뷰티필라테스협회(IHPA)가 있으며, IHPA가 ISO/IEC 17024 헬스케어지도사 자격을 주관 운영합니다.</p></div>
     <div class="host-grid">
-      <div class="host reveal"><div class="role">주최 · HOST</div><h3>국제휴머니티총연맹</h3><div class="en">International Humanity Union (IHU)</div><p>국제 휴머니티 가치를 기반으로 국제표준 자격인증 사업을 총괄 주최합니다. <span class="ph-note">(협회 홈페이지 소개 내용으로 교체 예정)</span></p></div>
-      <div class="host reveal"><div class="role">주관 · ORGANIZER</div><h3>국제휴먼뷰티필라테스협회</h3><div class="en">Int'l Human Beauty Pilates Association (IHPA)</div><p>ISO/IEC 17024 헬스케어지도사 자격의 교육·시험·인증을 주관 운영합니다. <span class="ph-note">(협회 홈페이지 소개 내용으로 교체 예정)</span></p></div>
+      <div class="host reveal"><div class="role">주최 · HOST</div><h3>국제휴머니티총연맹</h3><div class="en">International Humanity Union (IHU)</div><p>국제 휴머니티 가치를 기반으로 국제표준 자격인증 사업을 총괄 주최하는 국제기구입니다.</p></div>
+      <div class="host reveal"><div class="role">주관 · ORGANIZER</div><h3>국제휴먼뷰티필라테스협회</h3><div class="en">Int'l Human Beauty Pilates Association (IHPA)</div><p>국제휴머니티총연맹(IHU)의 <b class="purple">산하단체</b>로서, ISO/IEC 17024 헬스케어지도사 자격의 교육·시험·인증을 주관 운영합니다.</p></div>
     </div>
     <div class="rep reveal">
       <div class="photo" id="repPhoto">대표 사진<br>(추가 예정)</div>
       <div>
-        <div class="r-role" id="repRole">ASIA 총괄지부회장</div>
+        <div class="r-role" id="repRole">국제휴먼뷰티필라테스협회(IHPA) 회장 · 한국총괄지부장</div>
         <h3 id="repName">정재훈 <span style="font-size:15px;font-weight:600;color:var(--muted);">Jae-Hoon Jeong</span></h3>
-        <ul>
-          <li>아시아 총괄지부회장</li>
-          <li>ISO/IEC 17024 필라테스 국제자격 (International Pilates Instructor)</li>
-          <li>국제휴먼뷰티필라테스협회(IHPA) 대표</li>
-        </ul>
-        <p class="ph-note" style="margin-top:12px;">※ 대표 사진과 추가 경력은 제공해 주시면 반영합니다.</p>
+        <div class="rep-spec">
+          <div class="rep-col">
+            <div class="rep-h">이력</div>
+            <ul>
+              <li>국제휴먼올림픽 필라테스대회 첫 개최 및 총괄 심사위원장</li>
+              <li>가천대 특수치료대학원 운동치료학과 필라테스치료학 석사졸업</li>
+              <li>국제휴먼뷰티필라테스협회(IHPA) 회장</li>
+              <li>한국열린사이버대학교 뷰티건강디자인학과 특임교수</li>
+              <li>한국열린사이버대학교 뷰티건강디자인학과 체형관리분과 부위원장</li>
+              <li>FISAF KOREA PILATES 한국총괄지부장, 교육이사</li>
+              <li>국제미용건강총연합회(120개분과협회) 서초구 지부장</li>
+              <li>국제휴먼올림픽 국내교류위원회 위원장</li>
+              <li>국제미용건강신문사 2019 건강부문 대상 수상</li>
+              <li>제31회 국제휴먼올림픽 국회의원상 수상</li>
+              <li>제33회 국제휴먼올림픽 산모관리대회 대상 수상</li>
+              <li>세계건강뷰티협회 근골격계질환 예방운동센타 연구교수</li>
+              <li>한국열린사이버대학교 뷰티건강디자인학과 졸업</li>
+              <li>인천대 체육학과 졸업</li>
+            </ul>
+          </div>
+          <div class="rep-col">
+            <div class="rep-h">자격사항</div>
+            <ul>
+              <li>FISAF KOREA PILATES ADVANCED DIPLOMA (최고위과정)</li>
+              <li>FISAF KOREA PILATES 지도자과정 자격취득</li>
+              <li>샤샤필라테스 지도자과정 자격취득</li>
+              <li>카이로프랙틱 자격취득 (도수·재활)</li>
+              <li>MUSCLE MANUAL THERAPY 자격취득</li>
+              <li>자세체형 분석과 동작분석 수료</li>
+              <li>생활스포츠지도사 2급 (수영·보디빌딩)</li>
+              <li>운동처방사 1급·2급</li>
+              <li>IBM체형관리사 1급·2급</li>
+              <li>운동트레이너 1급·2급</li>
+              <li>스포츠맛사지 1급</li>
+              <li>적십자 라이프가드 수상인명구조원</li>
+              <li>수영장경영자협회 수상인명구조원</li>
+              <li>경영지도자·경영심판 자격취득 (대한수영연맹)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="cert-show reveal">
@@ -577,7 +614,7 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 // ===== CMS 데이터 렌더링 =====
 /* ===== 기본 내장 데이터 (파일을 직접 열거나 fetch 실패 시에도 항상 표시) ===== */
 var FALLBACK={
-  site:{"repName":"정재훈","repRole":"ASIA 총괄지부회장","repPhoto":"uploads/rep.jpg","address":"서울특별시 동대문구 왕산로 9길 25, 2층","email":"ihbpilates@naver.com"},
+  site:{"repName":"정재훈","repRole":"국제휴먼뷰티필라테스협회(IHPA) 회장","repPhoto":"uploads/rep.jpg","address":"서울특별시 동대문구 왕산로 9길 25, 2층","email":"ihbpilates@naver.com"},
   branches:{"head":{"region":"한국 총괄지부","title":"한국 총괄지부장","name":"박혜원 원장","photo":"uploads/branch-4.jpg","link":"https://blog.naver.com/pilates_reum"},"items":[{"region":"평택","title":"평택 지부장","name":"정미옥 원장","photo":"uploads/branch-6.jpg","link":"https://www.instagram.com/vanhada1977"},{"region":"경기동탄","title":"경기동탄 지부장","name":"박정은 원장","photo":"uploads/branch-2.jpg","link":"https://blog.naver.com/reum_dongtan"},{"region":"경기분당","title":"경기분당 지부장","name":"정혜욱 원장","photo":"uploads/branch-1.jpg","link":"https://blog.naver.com/woigi0714"},{"region":"서울도봉","title":"서울도봉 지부장","name":"이세영 원장","photo":"uploads/branch-7.jpg","link":"https://www.instagram.com/saeneul.phila"},{"region":"경기양주","title":"경기양주 지부장","name":"한지은 원장","photo":"uploads/branch-3.jpg","link":"https://www.instagram.com/soma_pilates_1"},{"region":"서울동대문","title":"서울동대문 지부장","name":"김승연 원장","photo":"uploads/branch-5.jpg","link":"https://www.instagram.com/pilates_here"}]},
   schedule:{"items":[{"branch":"서울 동대문","course":"필라테스 지도사","edu":"2026.03 ~ 04","exam":"2026.04.20"},{"branch":"분당","course":"건강관리 지도사","edu":"2026.03 ~ 05","exam":"2026.05.11"},{"branch":"평택","course":"시니어 헬스케어","edu":"2026.04 ~ 05","exam":"2026.05.25"},{"branch":"동탄","course":"키즈 헬스케어","edu":"2026.04 ~ 06","exam":"2026.06.15"}]},
   portfolio:{"items":[{"image":"","caption":"자격 시험 현장"},{"image":"","caption":"세미나 2026"},{"image":"","caption":"지도사 교육"},{"image":"","caption":"수료식"},{"image":"","caption":"워크숍"}]},
