@@ -265,8 +265,15 @@ footer{background:var(--purple-d);color:#D9CEE8;padding:54px 0 34px;font-size:14
 .popup .pfoot .close{font-weight:700;color:var(--purple-d);}
 .reveal{opacity:0;transform:translateY(22px);transition:.6s;} .reveal.in{opacity:1;transform:none;}
 /* 순차 등장 애니메이션 (취득 장점 · 시험 프로세스 · 진출분야 · BENEFIT) */
-.bene-grid .reveal,.career-grid .reveal,.proc .reveal{transform:translateY(34px) scale(.96);transition:.65s cubic-bezier(.2,.75,.3,1);}
+.bene-grid .reveal,.career-grid .reveal,.proc .reveal{transform:translateY(34px) scale(.96);transition:.45s cubic-bezier(.2,.75,.3,1);}
 .bene-grid .reveal.in,.career-grid .reveal.in,.proc .reveal.in{transform:none;}
+/* 모든 카드 마우스오버 확대 효과 */
+.bcard,.career,.bene,.fitem,.host,.proc-step,.chan,.recruit-card{transition:transform .28s cubic-bezier(.2,.75,.3,1),box-shadow .28s ease,border-color .28s ease;}
+.bcard:hover,.host:hover{transform:translateY(-4px) scale(1.03);}
+.career:hover,.fitem:hover{transform:translateY(-3px) scale(1.03);}
+.bene:hover,.proc-step:hover,.chan:hover,.recruit-card:hover{transform:scale(1.025);}
+.bene-grid .reveal.in:hover,.career-grid .reveal.in:hover,.proc .reveal.in:hover{transform:scale(1.03);}
+.career-grid .reveal.in:hover{transform:translateY(-3px) scale(1.03);}
 .bene-grid .reveal:nth-child(2),.career-grid .reveal:nth-child(2),.proc .reveal:nth-child(2){transition-delay:.10s;}
 .bene-grid .reveal:nth-child(3),.career-grid .reveal:nth-child(3),.proc .reveal:nth-child(3){transition-delay:.20s;}
 .bene-grid .reveal:nth-child(4),.career-grid .reveal:nth-child(4),.proc .reveal:nth-child(4){transition-delay:.30s;}
