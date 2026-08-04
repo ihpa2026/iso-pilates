@@ -1,0 +1,115 @@
+backend:
+  name: github
+  repo: ihpa2026/iso-pilates
+  branch: main
+
+media_folder: uploads
+public_folder: /uploads
+
+locale: ko
+
+collections:
+  - name: popup
+    label: 팝업창
+    files:
+      - name: popup
+        label: 메인 팝업
+        file: data/popup.json
+        fields:
+          - label: "팝업 목록 (여러 개 추가 시 한 화면에 나란히 표시 · 2~3개 권장)"
+            name: items
+            widget: list
+            fields:
+              - { label: "이 팝업 켜기(체크 시 표시)", name: enabled, widget: boolean, default: true }
+              - { label: 팝업 이미지, name: image, widget: image, required: false }
+              - { label: 제목, name: title, widget: string, required: false }
+              - { label: 내용, name: text, widget: text, required: false }
+              - { label: 링크 주소(선택), name: link, widget: string, required: false }
+              - { label: 링크 버튼 문구, name: linkText, widget: string, required: false, default: "자세히 보기" }
+  - name: site
+    label: 사이트 기본정보
+    files:
+      - name: general
+        label: 기본 정보
+        file: data/site.json
+        fields:
+          - { label: 대표 성함, name: repName, widget: string }
+          - { label: 대표 직함, name: repRole, widget: string }
+          - { label: 대표 사진, name: repPhoto, widget: image, required: false }
+          - { label: 주소, name: address, widget: string }
+          - { label: 이메일, name: email, widget: string }
+
+  - name: notices
+    label: 공지사항
+    files:
+      - name: notices
+        label: 공지 목록
+        file: data/notices.json
+        fields:
+          - label: 공지
+            name: items
+            widget: list
+            fields:
+              - { label: 제목, name: title, widget: string }
+              - { label: 날짜, name: date, widget: string }
+              - { label: 내용, name: body, widget: text, required: false }
+              - { label: 사진(선택), name: image, widget: image, required: false }
+
+  - name: schedule
+    label: 교육·시험 일정
+    files:
+      - name: schedule
+        label: 일정 목록
+        file: data/schedule.json
+        fields:
+          - label: 일정
+            name: items
+            widget: list
+            fields:
+              - { label: 지부, name: branch, widget: string }
+              - { label: 과정, name: course, widget: string }
+              - { label: 교육일정, name: edu, widget: string }
+              - { label: 시험일, name: exam, widget: string }
+              - { label: 모집상태, name: status, widget: select, options: ["모집중","마감임박","마감"], default: "모집중", required: false }
+              - { label: 상세 내용, name: body, widget: text, required: false }
+              - { label: 사진(선택), name: image, widget: image, required: false }
+
+  - name: branches
+    label: 지부현황(국내)
+    files:
+      - name: branches
+        label: 지부 목록
+        file: data/branches.json
+        fields:
+          - label: 한국총괄지부장 (상단 고정, 크게)
+            name: head
+            widget: object
+            fields:
+              - { label: 지역명, name: region, widget: string, default: "한국 총괄지부" }
+              - { label: 직함, name: title, widget: string, default: "한국 총괄지부장" }
+              - { label: 성함, name: name, widget: string }
+              - { label: 사진, name: photo, widget: image, required: false }
+              - { label: 클릭 시 이동할 링크(블로그·SNS), name: link, widget: string, required: false }
+          - label: "지부 목록 (새 지부는 맨 위에 추가하세요)"
+            name: items
+            widget: list
+            fields:
+              - { label: 지역, name: region, widget: string }
+              - { label: 직함, name: title, widget: string, required: false, default: "지부장" }
+              - { label: 지부장 성함, name: name, widget: string }
+              - { label: 사진, name: photo, widget: image, required: false }
+              - { label: 클릭 시 이동할 링크(블로그·SNS), name: link, widget: string, required: false }
+
+  - name: portfolio
+    label: 포트폴리오(사진)
+    files:
+      - name: portfolio
+        label: 사진 목록
+        file: data/portfolio.json
+        fields:
+          - label: 사진
+            name: items
+            widget: list
+            fields:
+              - { label: 이미지, name: image, widget: image }
+              - { label: 설명, name: caption, widget: string, required: false }
